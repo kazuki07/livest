@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.tailwindcss.com/2.2.16/tailwind.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ asset('css/runningtext.css') }}">
     <title>Document</title>
   </head>
   <body class="overflow-hidden">
@@ -30,7 +32,21 @@
                 <h1 class="text-center font-semibold text-white">Berita</h1>
               </div>
               <div class="flex h-24 items-center justify-center bg-orange-700">
-                <h1 class="text-center font-semibold text-white">Jam</h1>
+                <h1 class="text-center font-semibold text-white">
+                  <div class="clock flex items-center space-x-2 font-semibold">
+                    <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-white text-xl text-purple-800 shadow-md">
+                      <span id="hour">00</span>
+                    </div>
+                    <span>:</span>
+                    <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-white text-xl text-purple-800 shadow-md">
+                      <span id="minute">00</span>
+                    </div>
+                    <span>:</span>
+                    <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-white text-xl text-purple-800 shadow-md">
+                      <span id="seconds">00</span>
+                    </div>
+                  </div>
+                </h1>
               </div>
             </div>
           </div>
@@ -57,8 +73,12 @@
         </div>
       </div>
       <div class="col-span-3 flex h-10 items-center justify-center bg-black">
-        <h1 class="text-center font-semibold text-white">Text running</h1>
+      <div class="bg-light overflow-hidden px-2">
+          <p class="animate-runningText whitespace-nowrap font-semibold text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
     </div>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+  <script src="{{ mix('js/app.js') }}"></script>
   </body>
 </html>
