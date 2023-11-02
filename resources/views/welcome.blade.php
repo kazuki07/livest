@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.tailwindcss.com/2.2.16/tailwind.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ asset('css/runningtext.css') }}">
     <title>Document</title>
@@ -22,7 +22,7 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav>  
     <div class="m-24 flex h-full flex-col overflow-hidden rounded-lg bg-white pt-1">
       <div class="max-h-screen flex-grow">
         <div class="grid h-96 grid-cols-3">
