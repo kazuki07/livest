@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ asset('css/runningtext.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/dist/output.css" rel="stylesheet">
     <title>Document</title>
   </head>
   <body class="overflow-hidden">
@@ -52,9 +52,15 @@
           </div>
           <div class="bg-red-300 p-0.5">
             <div class="grid grid-rows-2">
-              <div class="flex h-80 items-center justify-center bg-purple-600">
-                <h1 class="text-center font-semibold text-white">Live streaming</h1>
+              <div class="flex h-80 items-center justify-center bg-white rounded-lg">
+              <div class="container mx-auto p-4">
+                <div class="bg-white rounded-lg shadow-lg">
+                    <video class="w-full h-full rounded-lg" controls>
+                        <source src="{{ asset('videos/your-video.mp4') }}" type="video/mp4">
+                    </video>
+                </div>
               </div>
+            </div>
               <div class="flex h-16 items-center justify-center bg-orange-900">
                 <h1 class="text-center font-semibold text-white">Informasi</h1>
               </div>
@@ -66,7 +72,16 @@
                 <h1 class="text-center font-semibold text-white">Pict</h1>
               </div>
               <div class="flex h-48 items-center justify-center bg-red-600">
-                <h1 class="text-center font-semibold text-white">Slide</h1>
+                <div class="max-w-2xl">
+                    <div class="carousel" data-flickity='{ "autoPlay": 3000, "wrapAround": true }'>
+                        @for($i = 1; $i <= 3; $i++)
+                            <div class="carousel-cell">
+                                <img src="{{ asset('images/' . $i . '.jpeg') }}" alt="Image {{ $i }}">
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+              </div>
               </div>
             </div>
           </div>
@@ -78,7 +93,7 @@
       </div>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-  <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
   </body>
 </html>
